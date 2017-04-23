@@ -1,0 +1,9 @@
+#scrum-board {
+    display: flex;
+    flex-grow: 1;
+    width: 800px;
+}
+
+#scrum-board .scrum-column {
+    flex-grow: 1;
+}

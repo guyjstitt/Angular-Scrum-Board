@@ -1,0 +1,8 @@
+<div class="column">
+  <h1>{{column.title}}</h1>
+  <scrum-task
+    *ngFor="let task of column.tasks"
+    [task]="task"
+    [selected]="task.id === selectedTaskId">
+  </scrum-task>
+</div>
