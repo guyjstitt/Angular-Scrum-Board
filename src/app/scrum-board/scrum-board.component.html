@@ -2,7 +2,9 @@
   <div id="scrum-board">
     <scrum-column
          *ngFor="let column of columns"
-         [column]="column">
+         [column]="column"
+         [selectedTaskId]="selectedTaskId"
+         (onTaskCreate)="handleTaskCreate($event)">
     </scrum-column>
   </div>
 </div>

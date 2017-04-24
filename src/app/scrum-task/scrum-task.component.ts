@@ -23,8 +23,7 @@ export class ScrumTaskComponent implements OnInit {
   ngOnInit() {
   }
 
-  clicked(event: any): void {
-    this.taskService.setSelectedTask(this.task);
-    event.preventDefault();
+  taskSelected(task): void {
+    this.taskService.setSelectedTask(task);
   }
 }

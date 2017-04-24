@@ -47,8 +47,8 @@ export interface SelectTaskAction extends Action {
 }
 
 export const selectTask: ActionCreator<SelectTaskAction> =
-  (column: Column, task: Task) => ({
+  (task: Task) => ({
     type: SELECT_TASK,
-    column: column,
+    column: task.column,
     task: task
   });

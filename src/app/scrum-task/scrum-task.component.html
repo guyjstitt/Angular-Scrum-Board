@@ -1,5 +1,7 @@
 <div id="{{ task.id }}" class="task">
-  {{ task.selected }}
-  <h3>{{ task.title }}</h3>
-  <p>{{ task.description }}</p>
+  <a (click)="taskSelected(task)">
+    {{ selected }}
+    <h3>{{ task.title }}</h3>
+    <p>{{ task.description }}</p>
+  </a>
 </div>

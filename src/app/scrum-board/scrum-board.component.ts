@@ -26,7 +26,7 @@ import {
 
 export class ScrumBoardComponent implements OnInit {
   columns: Column[];
-  selectedTask: string;
+  selectedTaskId: string;
 
   constructor(@Inject(AppStore) private store: Store<AppState>, private taskService: TaskService) {
     store.subscribe(() => this.updateState());
@@ -45,10 +45,14 @@ export class ScrumBoardComponent implements OnInit {
     const state = this.store.getState();
 
     this.columns = getAllColumns(state);
-    this.selectedTask = getSelectedTask(state);
+    this.selectedTaskId = getSelectedTask(state);
   }
 
   handleTaskClicked(task: Task) {
     this.store.dispatch(ColumnActions.selectTask(task));
+  }
+
+  handleTaskCreate(task: Task) {
+    this.store.dispatch(ColumnActions.addTask(task.column, task));
   }
 }

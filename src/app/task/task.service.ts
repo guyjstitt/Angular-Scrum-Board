@@ -10,7 +10,7 @@ export class TaskService {
 
   setSelectedTask(task: Task): void {
     this.task = task;
-    this.subject.next(task);
+    this.subject.next(this.task);
   }
   
   getSelectedTask(): Observable<Task> {

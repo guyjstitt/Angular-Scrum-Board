@@ -1,8 +1,18 @@
 <div class="column">
   <h1>{{column.title}}</h1>
+  <input type="text"
+    class="task-input"
+    placeholder="Task Title..."
+    [(ngModel)]="newTask.title" />
+  <input type="text"
+    class="task-input"
+    placeholder="Task Description..."
+    [(ngModel)]="newTask.description" />
+  <button (click)="addTask(column)">Add Task</button>
   <scrum-task
     *ngFor="let task of column.tasks"
     [task]="task"
     [selected]="task.id === selectedTaskId">
   </scrum-task>
 </div>
+
